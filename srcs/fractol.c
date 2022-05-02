@@ -5,10 +5,7 @@
 
 int main()
 {
-	void *mlx = mlx_init();
-	if (!mlx)
-		return (0);
-	void *window = mlx_new_window(mlx, 600, 600, "Fract'ol");
-	mlx_loop(mlx);
-	mlx_destroy_window(mlx, window);
+	t_data *data = init(600, 600);
+	mlx_key_hook(data->window, hook_key_mgr, data);
+	mlx_loop(data->mlx);
 }
