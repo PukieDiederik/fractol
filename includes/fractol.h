@@ -27,6 +27,7 @@ void img_put_pixel(t_img_data *img, int x, int y, unsigned int color);
 
 //hooks
 int hook_key_mgr(int keycode, t_data *data);
+int hook_expose_mgr(t_data *data);
 
 
 #endif
