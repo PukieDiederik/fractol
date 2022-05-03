@@ -1,7 +1,8 @@
 ## File stuff
 
 FNAMES 		=	fractol.c \
-				mlx_extra.c hooks.c
+				mlx_extra.c hooks.c \
+				fractals.c
 
 HNAMES		=	fractol.h
 

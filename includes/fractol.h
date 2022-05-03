@@ -1,6 +1,7 @@
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
+# define SIZE 600
 
 //structs
 typedef struct	s_img_data {
@@ -29,5 +30,7 @@ void img_put_pixel(t_img_data *img, int x, int y, unsigned int color);
 int hook_key_mgr(int keycode, t_data *data);
 int hook_expose_mgr(t_data *data);
 
+//fractals
+int mandelbrot(double x_p, double y_p);
 
 #endif
