@@ -27,7 +27,7 @@ t_data	*init(int width, int height)
 	return (data);
 }
 
-void	exit_clean(t_data *data)
+int	exit_clean(t_data *data)
 {
 	if (data->img != 0)
 		mlx_destroy_image(data->mlx, data->img->img);

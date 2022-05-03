@@ -1,6 +1,12 @@
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
+#if defined(__APPLE__)
+# define K_ESC 53
+#else //assume linux cause F windows
+# include <keysymdef.h>
+# define K_ESC XK_Escape
+#endif
 
 //structs
 typedef struct	s_img_data {
@@ -21,7 +27,7 @@ typedef struct s_data
 // Functions
 //initializes stuff from mlx
 t_data *init(int width, int height);
-void exit_clean(t_data *data);
+int exit_clean(t_data *data);
 //puts pixel on img
 void img_put_pixel(t_img_data *img, int x, int y, unsigned int color);
 
