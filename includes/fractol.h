@@ -2,6 +2,31 @@
 # define FRACTOL_H
 
 # define SIZE 600
+# if defined(__APPLE__)
+#  define K_ESC 53
+
+#  define K_UP 126
+#  define K_DOWN 125
+#  define K_LEFT 123
+#  define K_RIGHT 124
+
+#  define K_W 13
+#  define K_S 1
+#  define K_A 0
+#  define K_D 2
+# else //assume linux cause F windows
+#  define K_ESC 65307
+
+#  define K_UP 65362
+#  define K_DOWN 65364
+#  define K_LEFT 65361
+#  define K_RIGHT 65363
+
+#  define K_W 119
+#  define K_S 115
+#  define K_A 97
+#  define K_D 100
+# endif
 
 //structs
 typedef struct	s_img_data {
@@ -22,7 +47,7 @@ typedef struct s_data
 // Functions
 //initializes stuff from mlx
 t_data *init(int width, int height);
-void exit_clean(t_data *data);
+int exit_clean(t_data *data);
 //puts pixel on img
 void img_put_pixel(t_img_data *img, int x, int y, unsigned int color);
 

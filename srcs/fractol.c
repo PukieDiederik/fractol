@@ -8,6 +8,7 @@ int main()
 	t_data *data = init(SIZE, SIZE);
 	mlx_key_hook(data->window, hook_key_mgr, data);
 	mlx_expose_hook(data->window, hook_expose_mgr,data);
+	mlx_hook(data->window, 17, 0, exit_clean, data);
 	for (int x = 0; x < SIZE; x++) {
 		for (int y = 0; y < SIZE; y++) {
 			int i = mandelbrot(((x - ((double)SIZE / 2)) / ((double)SIZE / 2)) * 2 - 0.5, ((y - ((double)SIZE / 2)) / ((double)SIZE / 2)) * 2);
