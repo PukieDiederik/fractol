@@ -3,9 +3,30 @@
 
 #if defined(__APPLE__)
 # define K_ESC 53
+
+# define K_UP 126
+# define K_DOWN 125
+# define K_LEFT 123
+# define K_RIGHT 124
+
+# define K_W 13
+# define K_S 1
+# define K_A 0
+# define K_D 2
+
 #else //assume linux cause F windows
 # include <keysymdef.h>
 # define K_ESC XK_Escape
+
+# define K_UP XK_Up
+# define K_DOWN XK_Down
+# define K_LEFT XK_Left
+# define K_RIGHT XK_Right
+
+# define K_W XK_W
+# define K_S XK_S
+# define K_A XK_A
+# define K_D XK_D
 #endif
 
 //structs
