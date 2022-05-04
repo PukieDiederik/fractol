@@ -1,4 +1,27 @@
 #include "fractol.h"
+#include "math.h"
+#include "libft.h"
+
+int abs(int x)
+{
+	if (x < 0)
+		return (-x);
+	return (x);
+}
+
+double lerp(unsigned int a, unsigned int b, double t)
+{
+	return ((1 - t) * (double)a + t * (double)b);
+}
+
+unsigned int get_color(unsigned int color1, unsigned int color2, int i, int max)
+{
+	unsigned int c;
+	c = ((int)(lerp(color1 >> 16 & 0xff, color2 >> 16 & 0xff, (float)i / (float)max)) << 16)
+		|  ((int)(lerp(color1 >> 8 & 0xff, color2 >> 8 & 0xff, (float)i / (float)max)) << 8)
+		|  ((int)(lerp(color1& 0xff, color2 & 0xff, (float)i / (float)max)));
+	return (c);
+}
 
 void render_fractal(t_data *data)
 {
@@ -12,9 +35,7 @@ void render_fractal(t_data *data)
 		while (++y < data->size)
 		{
 			int fractal = mandelbrot(((double)x / data->size) * data->scale + data->x_offset, ((double)y / data->size) * data->scale + data->y_offset);
-			int color = 0x00000000;
-			if (fractal >= 100)
-				color = 0x00ffffff;
+			int color = get_color(0x00000000, 0x00ffffff, fractal, 100);
 			img_put_pixel(data->img, x, y, color);
 		}
 	}
