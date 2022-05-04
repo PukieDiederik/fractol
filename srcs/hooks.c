@@ -8,6 +8,16 @@ int hook_key_mgr(int keycode, t_data *data)
 //	printf("keycode: %d\n", keycode);
 	if(keycode == K_ESC) //ESC
 		exit_clean(data);
+	if (keycode == K_UP)
+		data->y_offset -= data->scale * 0.1;
+	else if (keycode == K_DOWN)
+		data->y_offset += data->scale * 0.1;
+	else if (keycode == K_RIGHT)
+		data->x_offset += data->scale * 0.1;
+	else if (keycode == K_LEFT)
+		data->x_offset -= data->scale * 0.1;
+	render_fractal(data);
+	mlx_put_image_to_window(data->mlx, data->window, data->img->img, 0, 0);
 	return (0);
 }
 
