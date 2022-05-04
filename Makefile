@@ -3,7 +3,8 @@
 FNAMES 		=	fractol.c \
 				mlx_extra.c hooks.c \
 				fractals.c \
-				renderer.c
+				renderer.c \
+				zoom.c
 
 HNAMES		=	fractol.h
 
@@ -23,7 +24,7 @@ LIBFT		= libft/libft.a
 ## Compilation
 
 CC			= gcc
-CFLAGS		= -Wall -Werror -Wextra -fsanitize=address
+CFLAGS		= -Wall -Werror -Wextra -g -fsanitize=address
 INCLUDES	= -I $(INCLUDE_DIR) -I libft -I minilibx
 LIBS		= -L minilibx -L libft -lft
 ## Other

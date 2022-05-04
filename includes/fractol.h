@@ -57,6 +57,10 @@ void img_put_pixel(t_img_data *img, unsigned int x, unsigned int y, unsigned int
 //hooks
 int hook_key_mgr(int keycode, t_data *data);
 int hook_expose_mgr(t_data *data);
+int hook_mouse_mgr(int button, int x, int y, t_data *data);
+
+void zoom_in(t_data *data, int x, int y);
+void zoom_out(t_data *data);
 
 //fractals
 int mandelbrot(double x_p, double y_p);

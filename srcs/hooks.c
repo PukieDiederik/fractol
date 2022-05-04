@@ -11,6 +11,15 @@ int hook_key_mgr(int keycode, t_data *data)
 	return (0);
 }
 
+int hook_mouse_mgr(int button, int x, int y, t_data *data)
+{
+	if (button == 4)
+		zoom_in(data, x, y);
+	else if (button == 5)
+		zoom_out(data);
+	return (0);
+}
+
 int hook_expose_mgr(t_data *data)
 {
 	mlx_put_image_to_window(data->mlx, data->window, data->img->img, 0, 0);
