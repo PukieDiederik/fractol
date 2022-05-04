@@ -8,13 +8,13 @@ int hook_key_mgr(int keycode, t_data *data)
 //	printf("keycode: %d\n", keycode);
 	if(keycode == K_ESC) //ESC
 		exit_clean(data);
-	if (keycode == K_UP)
+	if (keycode == K_UP || keycode == K_W)
 		data->y_offset -= data->scale * 0.1;
-	else if (keycode == K_DOWN)
+	else if (keycode == K_DOWN || keycode == K_S)
 		data->y_offset += data->scale * 0.1;
-	else if (keycode == K_RIGHT)
+	else if (keycode == K_RIGHT || keycode == K_D)
 		data->x_offset += data->scale * 0.1;
-	else if (keycode == K_LEFT)
+	else if (keycode == K_LEFT || keycode == K_A)
 		data->x_offset -= data->scale * 0.1;
 	render_fractal(data);
 	mlx_put_image_to_window(data->mlx, data->window, data->img->img, 0, 0);
