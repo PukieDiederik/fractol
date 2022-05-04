@@ -1,7 +1,5 @@
 #include "mlx.h"
-#include "libft.h"
 #include "fractol.h"
-#include <stdio.h>
 
 void zoom_in(t_data *data, int x, int y)
 {

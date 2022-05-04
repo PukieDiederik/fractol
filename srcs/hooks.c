@@ -1,12 +1,9 @@
 #include "mlx.h"
 #include "fractol.h"
-#include <stdio.h>
-
 //manages key hooks
 int hook_key_mgr(int keycode, t_data *data)
 {
-//	printf("keycode: %d\n", keycode);
-	if(keycode == K_ESC) //ESC
+	if(keycode == K_ESC)
 		exit_clean(data);
 	if (keycode == K_UP || keycode == K_W)
 		data->y_offset -= data->scale * 0.1;
