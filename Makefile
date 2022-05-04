@@ -2,7 +2,8 @@
 
 FNAMES 		=	fractol.c \
 				mlx_extra.c hooks.c \
-				fractals.c
+				fractals.c \
+				renderer.c
 
 HNAMES		=	fractol.h
 

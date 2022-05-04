@@ -1,5 +1,5 @@
 #include "fractol.h"
-#define MAX_ITER 100
+#define MAX_ITER 1000
 
 int mandelbrot(double x_p, double y_p)
 {
