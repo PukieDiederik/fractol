@@ -26,10 +26,8 @@ t_data	*init(int size)
 		&data->img->line_length, &data->img->endian);
 	data->size = size;
 	data->scale = 2.5;
-	data->x_offset = -1.75;
+	data->x_offset = -1.25;
 	data->y_offset = -1.25;
-//	data->fractal = mandelbrot;
-	data->fractal = burning_ship;
 	return (data);
 }
 

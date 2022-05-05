@@ -66,6 +66,7 @@ void zoom_out(t_data *data);
 //fractals
 int mandelbrot(double x_p, double y_p);
 int burning_ship(double x_p, double y_p);
+int julia(double x_p, double y_p);
 
 
 //rendering
