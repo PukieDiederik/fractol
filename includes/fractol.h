@@ -45,6 +45,7 @@ typedef struct s_data
 	double x_offset;
 	double y_offset;
 	unsigned int size;
+	int (*fractal)(double x, double y);
 }	t_data;
 
 // Functions
@@ -64,6 +65,8 @@ void zoom_out(t_data *data);
 
 //fractals
 int mandelbrot(double x_p, double y_p);
+int burning_ship(double x_p, double y_p);
+
 
 //rendering
 void render_fractal(t_data *data);
