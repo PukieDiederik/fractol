@@ -46,8 +46,8 @@ void	update_julia_mouse(t_data *data)
 	if (data->fractal == julia)
 	{
 		mlx_mouse_get_pos(data->window, &x, &y);
-		data->m_x = (double)x / data->size;
-		data->m_y = (double)y / data->size;
+		data->m_x = (double)x / (data->size >> 1) - 1;
+		data->m_y = (double)y / (data->size >> 1) - 1;
 		data->scale = 2.5;
 		data->x_offset = -1.25;
 		data->y_offset = -1.25;
