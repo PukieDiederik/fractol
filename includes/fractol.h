@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fractol.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: drobert- <drobert-@student.42lisboa.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/06 12:50:27 by drobert-          #+#    #+#             */
+/*   Updated: 2022/05/06 12:52:19 by drobert-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
@@ -28,7 +40,7 @@
 # endif
 
 //structs
-typedef struct	s_img_data {
+typedef struct s_img_data {
 	void	*img;
 	char	*addr;
 	int		bits_per_pixel;
@@ -51,26 +63,26 @@ typedef struct s_data
 
 // Functions
 //initializes stuff from mlx
-t_data *init(int size);
-int exit_clean(t_data *data);
+t_data	*init(int size);
+int		exit_clean(t_data *data);
 //puts pixel on img
-void img_put_pixel(t_img_data *img, unsigned int x, unsigned int y, unsigned int color);
+void	img_put_pixel(t_img_data *img, unsigned int x,
+			unsigned int y, unsigned int color);
 
 //hooks
-int hook_key_mgr(int keycode, t_data *data);
-int hook_expose_mgr(t_data *data);
-int hook_mouse_mgr(int button, int x, int y, t_data *data);
+int		hook_key_mgr(int keycode, t_data *data);
+int		hook_expose_mgr(t_data *data);
+int		hook_mouse_mgr(int button, int x, int y, t_data *data);
 
-void zoom_in(t_data *data, int x, int y);
-void zoom_out(t_data *data);
+void	zoom_in(t_data *data, int x, int y);
+void	zoom_out(t_data *data);
 
 //fractals
-int mandelbrot(double x_p, double y_p, t_data *data);
-int burning_ship(double x_p, double y_p, t_data *data);
-int julia(double x_p, double y_p, t_data *data);
-
+int		mandelbrot(double x_p, double y_p, t_data *data);
+int		burning_ship(double x_p, double y_p, t_data *data);
+int		julia(double x_p, double y_p, t_data *data);
 
 //rendering
-void render_fractal(t_data *data);
+void	render_fractal(t_data *data);
 
 #endif
