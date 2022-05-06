@@ -13,6 +13,7 @@
 #include "fractol.h"
 #include "math.h"
 #include "libft.h"
+#include "mlx.h"
 
 int	abs(int x)
 {
@@ -57,4 +58,5 @@ void	render_fractal(t_data *data)
 			img_put_pixel(data->img, x, y, color);
 		}
 	}
+	mlx_put_image_to_window(data->mlx, data->window, data->img->img, 0, 0);
 }

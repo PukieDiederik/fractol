@@ -35,7 +35,6 @@ int	main(int argc, char **argv)
 	mlx_expose_hook(data->window, hook_expose_mgr, data);
 	mlx_hook(data->window, 17, 0, exit_clean, data);
 	render_fractal(data);
-	mlx_put_image_to_window(data->mlx, data->window, data->img->img, 0, 0);
 	mlx_loop(data->mlx);
 }
 

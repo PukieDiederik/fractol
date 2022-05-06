@@ -1,5 +1,6 @@
 #include "fractol.h"
 #include "math.h"
+#include "mlx.h"
 
 int mandelbrot(double x_p, double y_p, t_data *data)
 {
@@ -31,11 +32,29 @@ int julia(double x, double y, t_data *data)
 		if (x * x + y * y > 256)
 			return(i);
 		temp = x * x - y * y;
-		y = 2 * x * y + 0.156;
-		x = temp + -0.8;
+		y = 2 * x * y + data->m_y;
+		x = temp + data->m_x;
 	}
 	return (i);
 }
+
+void	update_julia_mouse(t_data *data)
+{
+	int	x;
+	int	y;
+
+	if (data->fractal == julia)
+	{
+		mlx_mouse_get_pos(data->window, &x, &y);
+		data->m_x = (double)x / data->size;
+		data->m_y = (double)y / data->size;
+		data->scale = 2.5;
+		data->x_offset = -1.25;
+		data->y_offset = -1.25;
+		render_fractal(data);
+	}
+}
+
 
 int burning_ship(double x_p, double y_p, t_data *data)
 {

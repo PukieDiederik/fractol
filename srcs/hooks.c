@@ -34,6 +34,8 @@ int	hook_key_mgr(int keycode, t_data *data)
 
 int	hook_mouse_mgr(int button, int x, int y, t_data *data)
 {
+	if (button == 1)
+		update_julia_mouse(data);
 	if (button == 4)
 		zoom_in(data, x, y);
 	else if (button == 5)

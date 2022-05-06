@@ -59,6 +59,8 @@ typedef struct s_data
 	unsigned int	size;
 	int				(*fractal)(double x, double y, struct s_data *data);
 	unsigned int	max_iter;
+	double m_x;
+	double m_y;
 }	t_data;
 
 // Functions
@@ -81,6 +83,9 @@ void	zoom_out(t_data *data);
 int		mandelbrot(double x_p, double y_p, t_data *data);
 int		burning_ship(double x_p, double y_p, t_data *data);
 int		julia(double x_p, double y_p, t_data *data);
+
+void	update_julia_mouse(t_data *data);
+
 
 //rendering
 void	render_fractal(t_data *data);
