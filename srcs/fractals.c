@@ -1,16 +1,15 @@
 #include "fractol.h"
-#define MAX_ITER 100
 #include "math.h"
 
-int mandelbrot(double x_p, double y_p)
+int mandelbrot(double x_p, double y_p, t_data *data)
 {
-	int i;
+	unsigned int i;
 	double x;
 	double y;
 	double temp;
 
 	i = -1;
-	while (++i < MAX_ITER)
+	while (++i < data->max_iter)
 	{
 		if (x * x + y * y > 4)
 			return(i);
@@ -21,13 +20,13 @@ int mandelbrot(double x_p, double y_p)
 	return (i);
 }
 
-int julia(double x, double y)
+int julia(double x, double y, t_data *data)
 {
-	int i;
+	unsigned int i;
 	double temp;
 
 	i = -1;
-	while (++i < MAX_ITER)
+	while (++i < data->max_iter)
 	{
 		if (x * x + y * y > 256)
 			return(i);
@@ -38,15 +37,15 @@ int julia(double x, double y)
 	return (i);
 }
 
-int burning_ship(double x_p, double y_p)
+int burning_ship(double x_p, double y_p, t_data *data)
 {
-	int i;
+	unsigned int i;
 	double x;
 	double y;
 	double temp;
 
 	i = -1;
-	while (++i < MAX_ITER)
+	while (++i < data->max_iter)
 	{
 		if (x * x + y * y > 4)
 			return(i);

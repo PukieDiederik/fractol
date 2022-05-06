@@ -24,6 +24,7 @@ t_data	*init(int size)
 		exit_clean(data);
 	data->img->addr = mlx_get_data_addr(data->img->img, &data->img->bits_per_pixel,
 		&data->img->line_length, &data->img->endian);
+	data->max_iter = 100;
 	data->size = size;
 	data->scale = 2.5;
 	data->x_offset = -1.25;

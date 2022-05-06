@@ -34,8 +34,8 @@ void render_fractal(t_data *data)
 		y = -1;
 		while (++y < data->size)
 		{
-			int fractal = data->fractal(((double)x / data->size) * data->scale + data->x_offset, ((double)y / data->size) * data->scale + data->y_offset);
-			int color = get_color(0x00000000, 0x00ffffff, fractal, 100);
+			int fractal = data->fractal(((double)x / data->size) * data->scale + data->x_offset, ((double)y / data->size) * data->scale + data->y_offset, data);
+			int color = get_color(0x00000000, 0x00ffffff, fractal, data->max_iter);
 			img_put_pixel(data->img, x, y, color);
 		}
 	}

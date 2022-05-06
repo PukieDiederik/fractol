@@ -14,7 +14,7 @@ int main(int argc, char **argv)
 		exit(0);
 	}
 	data = init(600);
-	if (!get_fractal(argv[1], data))
+	if (!data || !data->mlx || !data->window || !get_fractal(argv[1], data))
 		exit_clean(data);
 	mlx_key_hook(data->window, hook_key_mgr, data);
 	mlx_mouse_hook(data->window, hook_mouse_mgr, data);

@@ -34,18 +34,19 @@ typedef struct	s_img_data {
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
-}				t_img_data;
+}	t_img_data;
 
 typedef struct s_data
 {
-	void *mlx;
-	void *window;
-	t_img_data *img;
-	double scale;
-	double x_offset;
-	double y_offset;
-	unsigned int size;
-	int (*fractal)(double x, double y);
+	void			*mlx;
+	void			*window;
+	t_img_data		*img;
+	double			scale;
+	double			x_offset;
+	double			y_offset;
+	unsigned int	size;
+	int				(*fractal)(double x, double y, struct s_data *data);
+	unsigned int	max_iter;
 }	t_data;
 
 // Functions
@@ -64,9 +65,9 @@ void zoom_in(t_data *data, int x, int y);
 void zoom_out(t_data *data);
 
 //fractals
-int mandelbrot(double x_p, double y_p);
-int burning_ship(double x_p, double y_p);
-int julia(double x_p, double y_p);
+int mandelbrot(double x_p, double y_p, t_data *data);
+int burning_ship(double x_p, double y_p, t_data *data);
+int julia(double x_p, double y_p, t_data *data);
 
 
 //rendering
