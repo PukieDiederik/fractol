@@ -6,7 +6,7 @@
 /*   By: drobert- <drobert-@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 14:24:08 by drobert-          #+#    #+#             */
-/*   Updated: 2022/05/09 14:25:36 by drobert-         ###   ########.fr       */
+/*   Updated: 2022/05/09 15:16:10 by drobert-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int	mandelbrot(double x_p, double y_p, t_data *data)
 	double			temp;
 
 	i = -1;
+	x = 0;
+	y = 0;
 	while (++i < data->max_iter)
 	{
 		if (x * x + y * y > 4)
@@ -75,6 +77,8 @@ int	burning_ship(double x_p, double y_p, t_data *data)
 	double			temp;
 
 	i = -1;
+	x = 0;
+	y = 0;
 	while (++i < data->max_iter)
 	{
 		if (x * x + y * y > 4)
