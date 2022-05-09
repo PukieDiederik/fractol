@@ -17,7 +17,6 @@
 //manages key hooks
 int	hook_key_mgr(int keycode, t_data *data)
 {
-	printf("keycode: %d\n", keycode);
 	if (keycode == K_ESC)
 		exit_clean(data);
 	if (keycode == K_UP || keycode == K_W)
