@@ -6,7 +6,7 @@
 /*   By: drobert- <drobert-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 12:41:04 by drobert-          #+#    #+#             */
-/*   Updated: 2022/05/06 12:41:51 by drobert-         ###   ########.fr       */
+/*   Updated: 2022/05/09 14:26:02 by drobert-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	hook_key_mgr(int keycode, t_data *data)
 		data->x_offset += data->scale * 0.1;
 	else if (keycode == K_LEFT || keycode == K_A)
 		data->x_offset -= data->scale * 0.1;
-	else if(keycode == K_SWITCH_C)
+	else if (keycode == K_SWITCH_C)
 		data->color_i = (data->color_i + 1) % MAX_COLORS;
 	render_fractal(data);
 	mlx_put_image_to_window(data->mlx, data->window,

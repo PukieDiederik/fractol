@@ -6,20 +6,20 @@
 /*   By: drobert- <drobert-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 12:43:55 by drobert-          #+#    #+#             */
-/*   Updated: 2022/05/06 12:48:50 by drobert-         ###   ########.fr       */
+/*   Updated: 2022/05/09 14:31:52 by drobert-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 #include "mlx.h"
 
-int get_color_from_index(unsigned int color_i)
+int	get_color_from_index(unsigned int color_i)
 {
-	const int color_arr[] = { 0x00000000, 0x0099d98c,
-							  0x0003071e, 0x006b9080,
-							  0x00ffffff, 0x001a759f,
-							  0x00ffba08, 0x00f6fff8
-			};
+	const int	color_arr[] = {0x00000000, 0x0099d98c,
+		0x0003071e, 0x006b9080,
+		0x00ffffff, 0x001a759f,
+		0x00ffba08, 0x00f6fff8};
+
 	return (color_arr[color_i]);
 }
 
@@ -55,7 +55,9 @@ void	render_fractal(t_data *data)
 					* data->scale + data->x_offset,
 					((double)y / data->size)
 					* data->scale + data->y_offset, data);
-			color = get_color(get_color_from_index(data->color_i), get_color_from_index(data->color_i + MAX_COLORS), fractal, data->max_iter);
+			color = get_color(get_color_from_index(data->color_i),
+					get_color_from_index(data->color_i + MAX_COLORS),
+					fractal, data->max_iter);
 			img_put_pixel(data->img, x, y, color);
 		}
 	}

@@ -1,8 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   mlx_extra.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: drobert- <drobert-@student.42lisboa.com>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/09 14:29:29 by drobert-          #+#    #+#             */
+/*   Updated: 2022/05/09 14:29:29 by drobert-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "mlx.h"
 #include "stdlib.h"
 #include "fractol.h"
 
-t_data	*init_data()
+t_data	*init_data(void)
 {
 	t_data	*data;
 
@@ -44,8 +55,9 @@ t_data	*init(int size)
 	data->img->img = mlx_new_image(data->mlx, size, size);
 	if (!data->img->img)
 		exit_clean(data);
-	data->img->addr = mlx_get_data_addr(data->img->img, &data->img->bits_per_pixel,
-		&data->img->line_length, &data->img->endian);
+	data->img->addr = mlx_get_data_addr(data->img->img,
+			&data->img->bits_per_pixel,
+			&data->img->line_length, &data->img->endian);
 	data->size = size;
 	return (data);
 }
@@ -53,18 +65,18 @@ t_data	*init(int size)
 int	exit_clean(t_data *data)
 {
 	if (data->window)
-	{
 		mlx_destroy_window(data->mlx, data->window);
-	}
-	if (data->img && data->img->img) {
-		mlx_destroy_image(data->mlx,data->img->img);
-	}
+	if (data->img && data->img->img)
+		mlx_destroy_image(data->mlx, data->img->img);
 	free(data->img);
 	free(data);
 	exit(0);
 }
 
-void img_put_pixel(t_img_data *img, unsigned int x, unsigned int y, unsigned int color)
+void	img_put_pixel(t_img_data *img, unsigned int x,
+		unsigned int y, unsigned int color)
 {
-	*((unsigned int *)(img->addr + (y * img->line_length + x * (img->bits_per_pixel / 8)))) = color;
+	*((unsigned int *)(img->addr
+				+ (y * img->line_length + x
+					* (img->bits_per_pixel / 8)))) = color;
 }

@@ -1,19 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fractals.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: drobert- <drobert-@student.42lisboa.com>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/09 14:24:08 by drobert-          #+#    #+#             */
+/*   Updated: 2022/05/09 14:25:36 by drobert-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fractol.h"
 #include "math.h"
 #include "mlx.h"
 
-int mandelbrot(double x_p, double y_p, t_data *data)
+int	mandelbrot(double x_p, double y_p, t_data *data)
 {
-	unsigned int i;
-	double x;
-	double y;
-	double temp;
+	unsigned int	i;
+	double			x;
+	double			y;
+	double			temp;
 
 	i = -1;
 	while (++i < data->max_iter)
 	{
 		if (x * x + y * y > 4)
-			return(i);
+			return (i);
 		temp = x * x - y * y + x_p;
 		y = 2 * x * y + y_p;
 		x = temp;
@@ -21,16 +33,16 @@ int mandelbrot(double x_p, double y_p, t_data *data)
 	return (i);
 }
 
-int julia(double x, double y, t_data *data)
+int	julia(double x, double y, t_data *data)
 {
-	unsigned int i;
-	double temp;
+	unsigned int	i;
+	double			temp;
 
 	i = -1;
 	while (++i < data->max_iter)
 	{
 		if (x * x + y * y > 256)
-			return(i);
+			return (i);
 		temp = x * x - y * y;
 		y = 2 * x * y + data->m_y;
 		x = temp + data->m_x;
@@ -55,19 +67,18 @@ void	update_julia_mouse(t_data *data)
 	}
 }
 
-
-int burning_ship(double x_p, double y_p, t_data *data)
+int	burning_ship(double x_p, double y_p, t_data *data)
 {
-	unsigned int i;
-	double x;
-	double y;
-	double temp;
+	unsigned int	i;
+	double			x;
+	double			y;
+	double			temp;
 
 	i = -1;
 	while (++i < data->max_iter)
 	{
 		if (x * x + y * y > 4)
-			return(i);
+			return (i);
 		temp = x * x - y * y + x_p;
 		y = fabs(2 * x * y) + y_p;
 		x = temp;

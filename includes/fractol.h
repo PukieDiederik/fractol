@@ -93,7 +93,6 @@ int		julia(double x_p, double y_p, t_data *data);
 
 void	update_julia_mouse(t_data *data);
 
-
 //rendering
 void	render_fractal(t_data *data);
 
