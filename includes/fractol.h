@@ -25,6 +25,8 @@
 #  define K_S 1
 #  define K_A 0
 #  define K_D 2
+
+#  define K_SWITCH_C 0
 # else //assume linux cause F windows
 #  define K_ESC 65307
 
@@ -37,7 +39,11 @@
 #  define K_S 115
 #  define K_A 97
 #  define K_D 100
+
+#  define K_SWITCH_C 61
 # endif
+
+# define MAX_COLORS 4
 
 //structs
 typedef struct s_img_data {
@@ -59,8 +65,9 @@ typedef struct s_data
 	unsigned int	size;
 	int				(*fractal)(double x, double y, struct s_data *data);
 	unsigned int	max_iter;
-	double m_x;
-	double m_y;
+	double			m_x;
+	double			m_y;
+	unsigned int	color_i;
 }	t_data;
 
 // Functions

@@ -29,6 +29,7 @@ t_data	*init(int size)
 	data->scale = 2.5;
 	data->x_offset = -1.25;
 	data->y_offset = -1.25;
+	data->color_i = 0;
 	return (data);
 }
 

@@ -11,15 +11,16 @@
 /* ************************************************************************** */
 
 #include "fractol.h"
-#include "math.h"
-#include "libft.h"
 #include "mlx.h"
 
-int	abs(int x)
+int get_color_from_index(unsigned int color_i)
 {
-	if (x < 0)
-		return (-x);
-	return (x);
+	const int color_arr[] = { 0x00000000, 0x0099d98c,
+							  0x0003071e, 0x006b9080,
+							  0x00ffffff, 0x001a759f,
+							  0x00ffba08, 0x00f6fff8
+			};
+	return (color_arr[color_i]);
 }
 
 int	lerp(unsigned int a, unsigned int b, double t)
@@ -54,7 +55,7 @@ void	render_fractal(t_data *data)
 					* data->scale + data->x_offset,
 					((double)y / data->size)
 					* data->scale + data->y_offset, data);
-			color = get_color(0x00000000, 0x00ffffff, fractal, data->max_iter);
+			color = get_color(get_color_from_index(data->color_i), get_color_from_index(data->color_i + MAX_COLORS), fractal, data->max_iter);
 			img_put_pixel(data->img, x, y, color);
 		}
 	}
