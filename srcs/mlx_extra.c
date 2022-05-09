@@ -6,7 +6,7 @@
 /*   By: drobert- <drobert-@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 14:29:29 by drobert-          #+#    #+#             */
-/*   Updated: 2022/05/09 14:29:29 by drobert-         ###   ########.fr       */
+/*   Updated: 2022/05/09 17:02:19 by drobert-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "mlx.h"
@@ -46,6 +46,7 @@ t_data	*init(int size)
 	data->mlx = mlx_init();
 	if (!data->mlx)
 	{
+		free(data->img);
 		free(data);
 		exit(0);
 	}
@@ -64,10 +65,13 @@ t_data	*init(int size)
 
 int	exit_clean(t_data *data)
 {
+	mlx_loop_end(data->mlx);
 	if (data->window)
 		mlx_destroy_window(data->mlx, data->window);
 	if (data->img && data->img->img)
 		mlx_destroy_image(data->mlx, data->img->img);
+	mlx_destroy_display(data->mlx);
+	free(data->mlx);
 	free(data->img);
 	free(data);
 	exit(0);

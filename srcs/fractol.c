@@ -6,7 +6,7 @@
 /*   By: drobert- <drobert-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 12:49:49 by drobert-          #+#    #+#             */
-/*   Updated: 2022/05/06 12:49:54 by drobert-         ###   ########.fr       */
+/*   Updated: 2022/05/09 14:36:12 by drobert-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(int argc, char **argv)
 		exit(0);
 	}
 	data = init(600);
-	if (!data || !data->mlx || !data->window || !get_fractal(argv[1], data))
+	if (!get_fractal(argv[1], data))
 		exit_clean(data);
 	mlx_key_hook(data->window, hook_key_mgr, data);
 	mlx_mouse_hook(data->window, hook_mouse_mgr, data);
