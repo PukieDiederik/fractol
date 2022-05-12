@@ -6,7 +6,7 @@
 /*   By: drobert- <drobert-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 12:50:27 by drobert-          #+#    #+#             */
-/*   Updated: 2022/05/06 12:52:19 by drobert-         ###   ########.fr       */
+/*   Updated: 2022/05/12 12:15:32 by drobert-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 #  define K_A 0
 #  define K_D 2
 
-#  define K_SWITCH_C 0
+#  define K_SWITCH_C 24
 # else //assume linux cause F windows
 #  define K_ESC 65307
 

@@ -6,7 +6,7 @@
 /*   By: drobert- <drobert-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 12:49:49 by drobert-          #+#    #+#             */
-/*   Updated: 2022/05/09 14:36:12 by drobert-         ###   ########.fr       */
+/*   Updated: 2022/05/12 12:46:12 by drobert-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	print_help(void)
 	ft_putstr_fd("Valid use of this command: ./fractol [fractal name]\n", 1);
 	ft_putstr_fd("Fractals:\n", 1);
 	ft_putstr_fd("\t- mandelbrot\n", 1);
-	ft_putstr_fd("\t-julia\n", 1);
+	ft_putstr_fd("\t- julia\n", 1);
 	ft_putstr_fd("\t- burning_ship\n", 1);
 }
 

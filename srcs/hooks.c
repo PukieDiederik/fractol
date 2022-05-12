@@ -6,13 +6,12 @@
 /*   By: drobert- <drobert-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 12:41:04 by drobert-          #+#    #+#             */
-/*   Updated: 2022/05/09 14:26:02 by drobert-         ###   ########.fr       */
+/*   Updated: 2022/05/12 12:46:47 by drobert-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx.h"
 #include "fractol.h"
-#include <stdio.h>
 
 //manages key hooks
 int	hook_key_mgr(int keycode, t_data *data)

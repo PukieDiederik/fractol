@@ -6,7 +6,7 @@
 /*   By: drobert- <drobert-@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 14:24:08 by drobert-          #+#    #+#             */
-/*   Updated: 2022/05/09 15:16:10 by drobert-         ###   ########.fr       */
+/*   Updated: 2022/05/12 12:52:33 by drobert-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	julia(double x, double y, t_data *data)
 	i = -1;
 	while (++i < data->max_iter)
 	{
-		if (x * x + y * y > 256)
+		if (x * x + y * y > 4)
 			return (i);
 		temp = x * x - y * y;
 		y = 2 * x * y + data->m_y;
@@ -59,7 +59,7 @@ void	update_julia_mouse(t_data *data)
 
 	if (data->fractal == julia)
 	{
-		mlx_mouse_get_pos(data->mlx, data->window, &x, &y);
+		mlx_mouse_get_pos(data->window, &x, &y);
 		data->m_x = (double)x / (data->size >> 1) - 1;
 		data->m_y = (double)y / (data->size >> 1) - 1;
 		data->scale = 2.5;
