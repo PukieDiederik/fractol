@@ -6,7 +6,7 @@
 /*   By: drobert- <drobert-@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 14:24:08 by drobert-          #+#    #+#             */
-/*   Updated: 2022/05/12 12:52:33 by drobert-         ###   ########.fr       */
+/*   Updated: 2022/05/12 14:07:21 by drobert-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ void	update_julia_mouse(t_data *data)
 	if (data->fractal == julia)
 	{
 		mlx_mouse_get_pos(data->window, &x, &y);
+		if (y < 0 || y > (int)data->size || x < 0 || x > (int)data->size)
+			return ;
 		data->m_x = (double)x / (data->size >> 1) - 1;
 		data->m_y = (double)y / (data->size >> 1) - 1;
 		data->scale = 2.5;
